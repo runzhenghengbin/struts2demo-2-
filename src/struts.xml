@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- dtd约束文件 -->
+<!DOCTYPE struts PUBLIC 
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" 
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+    
+  
+<struts>
+
+
+
+
+<package name="default" namespace="/" extends="struts-default" >
+
+<default-action-ref name="error"></default-action-ref>
+<action name="error">
+<result>/error.jsp</result>
+</action>
+
+<action name="helloworld_*" class="com.zhb.action.HelloWorldAction" method="{1}">
+<result>/result.jsp</result>
+<result name ="add">/{1}.jsp</result>
+</action>
+
+
+<action name="LoginAction" class="com.zhb.action.LoginAction" method="login">
+<result>/success.jsp</result>
+<result name= "input">/login.jsp</result>
+</action>
+</package>
+
+</struts>
